@@ -21,8 +21,8 @@ option1.add_argument("--disable-notifications")
 driver = webdriver.Chrome(executable_path=r"C:\Users\user\chromedriver.exe", chrome_options=option1)
 driver.maximize_window()
 driver.get("https://facebook.com/")
-username="083811"
-password="Axiata"
+username="eg"
+password="ARF"
 
 driver.find_element_by_id("email").send_keys(username)
 driver.find_element_by_id("pass").send_keys(password)
@@ -50,7 +50,7 @@ for i in range(1,n):
         driver.get(a)
         driver.implicitly_wait(10)
         
-        dharga="50000"
+        dharga="99999"
         harga=driver.find_element_by_xpath('//label[@aria-label="Harga"]')
         harga.click()
         harga.send_keys(Keys.BACKSPACE+Keys.BACKSPACE+Keys.BACKSPACE+Keys.BACKSPACE+Keys.BACKSPACE+Keys.BACKSPACE)
@@ -58,27 +58,13 @@ for i in range(1,n):
         harga.send_keys(dharga)
         
 
-        dlokasi=['Sukoharjo','Kendal','Slawi','Temanggung','Wonogiri',
-    'Wonosobo','Surakarta','Magelang','semarang',
-    'Bangkalan','Nganjuk','Banyuwangi','Ngawi',
-    'Kanigoro','Bojonegoro','Pamekasan','Bangil',
-    'Gresik','Ponorogo','Jember','Kraksaan',
-    'Jombang','Sampang','Ngasem','Sidoarjo',
-    'Lamongan','Situbondo','Lumajang','Sumenep',
-    'Caruban','Trenggalek','Magetan','Tuban',
-    'Kepanjen','Tulungagung','Mojosari','Batu',
-    'Blitar','Mojokerto','Kediri','Pasuruan',
-    'Madiun','Probolinggo','Malang','Surabaya',
-    'Soreang','Bandung','Ngamprah','Banjar',
-    'Cikarang','Bekasi','Cibinong','Bogor',
-    'Ciamis','Cimahi','Ciamis','Cimahi',
-    'Tarogong','Depok','Indramayu','Sukabumi',
-    'Karawang','Tasikmalaya','Kuningan','Singaparna',
+        dlokasi=['Singaparna',
     'Majalengka','Sumedang','Parigi','Palabuhanratu',
     'Purwakarta','Subang'
     ]
 
-
+        if dlokasi[b]=="subang":
+            break
         lokasi=driver.find_element_by_xpath('//input[@aria-label="Masukkan kota"]')
         lokasi.click()
         lokasi.send_keys(Keys.BACKSPACE+dlokasi[b])
@@ -90,12 +76,12 @@ for i in range(1,n):
         lanjutkan.click()
         terbitkan=driver.find_element_by_xpath('//div[@aria-label="Terbitkan"]')
         terbitkan.click()
-        time.sleep(10)     
+        time.sleep(15)   
+        b+=1  
         driver.get('https://www.facebook.com/marketplace/you/selling?state=DRAFT')
-        lanjut=driver.find_element_by_xpath('//span[text()="(BIG PROMO 50%) JAM TANGAN ANTI AIR BISA COD / BAYAR DI TEMPATT"]')
+        lanjut=driver.find_element_by_xpath('//span[text()="(SPECIAL OFFER PROMO 50%) JAM TANGAN ANTI AIR  BISA COD / BAYAR DI TEMPAT (COD)"]')
         lanj=(lanjut.text)
-        b+=1
-        if lanj=="(BIG PROMO 50%) JAM TANGAN ANTI AIR BISA COD / BAYAR DI TEMPATT":
+        if lanj=="(SPECIAL OFFER PROMO 50%) JAM TANGAN ANTI AIR BISA COD / BAYAR DI TEMPAT (COD)":
             continue
         else:
             break
