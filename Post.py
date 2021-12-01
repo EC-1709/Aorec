@@ -21,8 +21,8 @@ option1.add_argument("--disable-notifications")
 driver = webdriver.Chrome(executable_path=r"C:\Users\user\chromedriver.exe", chrome_options=option1)
 driver.maximize_window()
 driver.get("https://facebook.com/")
-username="083811097293"
-password="Axiata11"
+username="083811"
+password="Axiata"
 
 driver.find_element_by_id("email").send_keys(username)
 driver.find_element_by_id("pass").send_keys(password)
